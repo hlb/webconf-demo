@@ -1,0 +1,71 @@
+@import "compass";
+@import "module/normalize";
+@import "module/colors";
+@import "module/retina-sprites";
+@import "module/icons";
+
+.container {
+    width: 960px;
+    margin: 20px auto;
+}
+
+$colors: 'base-color' $base_color,
+         'complement-color' $complement_color, 'complement-alt-color' $complement_alt_color,
+         'light-color' $light_color, 'lighter-color' $lighter_color,
+         'triad1-color' $triad1_color, 'triad2-color' $triad2_color;
+
+@each $color in $colors {
+    .#{nth($color, 1)} {
+        background-color: nth($color, 2);
+        width: 180px;
+        height: 180px;
+        border-radius: (180px/2);
+        margin-bottom: 1em;
+    }
+}
+
+/*
+## Colorbox
+
+用來 demo color
+
+```
+<div class="colorbox">
+    <div class="box">
+        <div class="base-color"></div>
+        $base_color
+    </div>
+    <div class="box">
+        <div class="complement-color"></div>
+        $complement_color
+    </div>
+    <div class="box">
+        <div class="complement-alt-color"></div>
+        $complement_alt_color
+    </div>
+</div>
+```
+*/
+
+.colorbox {
+    margin-bottom: 20px;
+    .box {
+        display: inline-block;
+        text-align: center;
+        margin: 0 10px;
+    }
+}
+
+%button {
+    border: 1px solid #000;
+}
+.button {
+    @extend %button;
+}
+.form-foo .button-warning {
+    @extend %button;
+    float: right;
+}
+.sidebar .button {
+    border-color: green;
+}
