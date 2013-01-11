@@ -1,0 +1,31 @@
+// # Dependencies
+// * _retina-sprites.scss
+
+/*
+# Icons
+
+所有 icon 應使用 `<i class="icon icon-{icon-filename}"></i>`。其中 `.icon` 負責貼加 `inline-block` 樣式。
+
+```
+<p>
+    <i class="icon icon-chat"></i>
+    <i class="icon icon-gear"></i>
+    <i class="icon icon-group"></i>
+    <i class="icon icon-lock"></i>
+    <i class="icon icon-pencil"></i>
+    <i class="icon icon-tag"></i>
+    <i class="icon icon-user"></i>
+</p>
+```
+*/
+$icon-sprite-dimensions: true;
+@import "icon/*.png";
+@include all-icon-sprites;
+
+$icon-retina-sprite-dimensions: true;
+@import "icon-retina/*.png";
+@include all-retina-sprites($icon-sprites, $icon-retina-sprites);
+
+.icon {
+    display: inline-block;
+}

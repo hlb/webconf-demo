@@ -1,0 +1,21 @@
+// # Compass dependencies
+// * [Ellipses](http://compass-style.org/reference/compass/utilities/text/ellipsis/)
+
+@import "compass/utilities/text/ellipsis";
+
+/*
+# Mixins
+
+## %text-ellipsis
+
+Sass 3.2 placeholder selector 的範例，使用了 Compass 的 Ellipsis mixin。
+
+### Usage
+
+`.foo { @extend %text-ellipsis; }`
+
+*/
+
+%text-ellipsis {
+    @include ellipsis($no-wrap: true);
+}
