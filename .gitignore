@@ -5,4 +5,3 @@ tmp
 compass_app_log.txt
 fire_app_log.txt
 .DS_Store
-stylesheets/*
